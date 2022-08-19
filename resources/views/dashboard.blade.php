@@ -31,7 +31,7 @@
 
             <div class="row d-flex justify-content-center mb-3">
                 <div class="col-lg-4">
-                    <div class="bloco bg-danger">
+                    <div class="bloco bg-secondary">
                         <a href="http://">
                             <img src="{{ asset('img/bank-transfer.png') }}" alt="" srcset=""> <br>
                             <span>Transferir</span>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="bloco bg-success">
+                    <div class="bloco bg-info">
                         <a href="http://">
                             <img src="{{ asset('img/list.png') }}" alt="" srcset=""> <br>
                             <span>Extrato</span>
