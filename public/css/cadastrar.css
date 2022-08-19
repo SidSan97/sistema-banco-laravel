@@ -1,0 +1,17 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.sec-cadastro
+{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.sec-cadastro input
+{
+    width: 100%;
+    outline: none;
+}

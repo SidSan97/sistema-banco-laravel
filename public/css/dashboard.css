@@ -1,0 +1,28 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.bloco
+{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bloco a:link
+{
+    text-decoration: none;
+    color: #161616;
+    text-align: center;
+}
+
+.bloco span
+{
+    font-size: 30px;
+    font-weight: 700;
+}
