@@ -27,6 +27,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
+    //SAQUE
     Route::get('redirect1', function () {
         return redirect()->route('sacar');
     });
@@ -34,4 +35,13 @@ Route::middleware([
     Route::get('/saque', function(){
         return view('saque');
     })->name('sacar');
+
+    //DEPOSITO
+    Route::get('redirect2', function () {
+        return redirect()->route('depositar');
+    });
+
+    Route::get('/deposito', function(){
+        return view('deposito');
+    })->name('depositar');
 });

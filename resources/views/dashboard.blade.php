@@ -22,7 +22,7 @@
 
                 <div class="col-lg-4">
                     <div class="bloco bg-success">
-                        <a href="http://">
+                        <a href="{{ route('depositar') }}">
                             <img src="{{ asset('img/piggy-bank.png') }}" alt="" srcset=""> <br>
                             <span>Depositar</span>
                         </a>
