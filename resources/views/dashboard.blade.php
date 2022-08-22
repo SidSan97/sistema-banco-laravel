@@ -9,10 +9,11 @@
 
     <div class="container">
         <section class="painel-dash mt-4">
+
             <div class="row d-flex justify-content-center mb-3">
                 <div class="col-lg-4">
                     <div class="bloco bg-danger">
-                        <a href="http://">
+                        <a href="{{ route('sacar') }}">
                             <img src="{{ asset('img/money-withdrawal.png') }}" alt="" srcset=""> <br>
                             <span>Sacar</span>
                         </a>

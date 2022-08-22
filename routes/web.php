@@ -26,4 +26,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('redirect1', function () {
+        return redirect()->route('sacar');
+    });
+
+    Route::get('/saque', function(){
+        return view('saque');
+    })->name('sacar');
 });
