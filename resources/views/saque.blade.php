@@ -12,7 +12,7 @@
 <body>
 
     <div class="container">
-        <section class="sec-saque">
+        <section class="sec-saque mt-3">
             <h1>Faça aqui seu saque</h1> <br>
 
             <x-jet-validation-errors class="mb-4" />
@@ -26,6 +26,8 @@
                         <input class="form-control" type="number" id="valor" name="valor" :value="old('valor')" autofocus required maxlength="100">
                     </div>
                 </div>
+
+                <button type="submit" class="btn btn-primary">Sacar</button>
             </form>
         </section>
     </div>
