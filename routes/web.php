@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +45,6 @@ Route::middleware([
     Route::get('/deposito', function(){
         return view('deposito');
     })->name('depositar');
+
+    Route::post('/', [ClienteController::class, 'deposito'])->name('deposito-valor');
 });
