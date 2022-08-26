@@ -47,4 +47,15 @@ Route::middleware([
     })->name('depositar');
 
     Route::post('/', [ClienteController::class, 'deposito'])->name('deposito-valor');
+
+    //SAQUE
+    Route::get('redirect3', function () {
+        return redirect()->route('sacar');
+    });
+
+    Route::get('/saque', function(){
+        return view('saque');
+    })->name('sacar');
+
+    Route::post('/', [ClienteController::class, 'saque'])->name('saque-valor');
 });

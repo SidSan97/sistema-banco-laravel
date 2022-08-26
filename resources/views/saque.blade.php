@@ -17,7 +17,7 @@
 
             <x-jet-validation-errors class="mb-4" />
 
-            <form action="" method="post">
+            <form action="{{ route('saque-valor') }}" method="post">
                 @csrf
 
                 <div class="row mb-4">
