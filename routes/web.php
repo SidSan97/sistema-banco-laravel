@@ -28,15 +28,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    //SAQUE
-    Route::get('redirect1', function () {
-        return redirect()->route('sacar');
-    });
-
-    Route::get('/saque', function(){
-        return view('saque');
-    })->name('sacar');
-
     //DEPOSITO
     Route::get('redirect2', function () {
         return redirect()->route('depositar');
@@ -46,7 +37,7 @@ Route::middleware([
         return view('deposito');
     })->name('depositar');
 
-    Route::post('/', [ClienteController::class, 'deposito'])->name('deposito-valor');
+    Route::post('/dep', [ClienteController::class, 'deposito'])->name('deposito-valor');
 
     //SAQUE
     Route::get('redirect3', function () {
@@ -57,5 +48,6 @@ Route::middleware([
         return view('saque');
     })->name('sacar');
 
-    Route::post('/', [ClienteController::class, 'saque'])->name('saque-valor');
+    Route::post('/saq', [ClienteController::class, 'saque'])->name('saque-valor');
+
 });

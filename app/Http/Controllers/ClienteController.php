@@ -60,4 +60,9 @@ class ClienteController extends Controller
             throw new Exception('Não foi possivel fazer o saque');
         }
     }
+
+    public function transferencia(Request $request)
+    {
+
+    }
 }
