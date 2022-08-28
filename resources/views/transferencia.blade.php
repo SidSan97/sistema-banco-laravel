@@ -23,21 +23,21 @@
                 <div class="row mb-4">
                     <div class="col-lg-6 mb-1">
                         <label for="valor">VALOR DA TRANSFERÊNCIA</label>
-                        <input class="form-control" type="number" id="valor" name="valor" :value="old('valor')" autofocus required maxlength="10">
+                        <input class="form-control" type="number" id="valor_transferencia" name="valor_transferencia" :value="old('valor_transferencia')" autofocus required maxlength="10">
                     </div>
                 </div>
 
                 <div class="row mb-4">
                     <div class="col-lg-6 mb-1">
                         <label for="numDest">INFORME O NÚMERO DA CONTA DESTINATÁRIA</label>
-                        <input class="form-control" type="number" id="valorDest" name="numDest" :value="old('numDest')" autofocus required maxlength="10">
+                        <input class="form-control" type="number" id="num_conta_dest" name="num_conta_dest" :value="old('num_conta_dest')" autofocus required maxlength="10">
                     </div>
                 </div>
 
                 <div class="row mb-4">
                     <div class="col-lg-6 mb-1">
                         <label for="valor">INFORME O NOME DO DESTINATÁRIO</label>
-                        <input class="form-control" type="text" id="nomeDest" name="nomeDest" :value="old('nomeDest')" autofocus required maxlength="100">
+                        <input class="form-control" type="text" id="nome_destinatario" name="nome_destinatario" :value="old('nome_destinatario')" autofocus required maxlength="100">
                     </div>
                 </div>
 
