@@ -33,7 +33,7 @@
             <div class="row d-flex justify-content-center mb-3">
                 <div class="col-lg-4">
                     <div class="bloco bg-secondary">
-                        <a href="http://">
+                        <a href="{{ route('transferir') }}">
                             <img src="{{ asset('img/bank-transfer.png') }}" alt="" srcset=""> <br>
                             <span>Transferir</span>
                         </a>

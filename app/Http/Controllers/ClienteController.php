@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User as UserModel;
 use Exception;
+use Illuminate\Support\Facades\DB;
+
 
 class ClienteController extends Controller
 {
@@ -36,16 +38,11 @@ class ClienteController extends Controller
         $valorNaConta = $user->saldo;
         $valorSacar   = $request->input('valor');
 
-        if($valorNaConta > 0) {
 
-            if($valorSacar <= $valorNaConta) {
+        if($valorSacar <= $valorNaConta) {
 
-                $valorNaConta -= $valorSacar;
-                $user->saldo = $valorNaConta;
-            }
-            else {
-                throw new Exception('Saldo insuficiente');
-            }
+            $valorNaConta -= $valorSacar;
+            $user->saldo = $valorNaConta;
         }
         else {
             throw new Exception('Saldo insuficiente');
@@ -63,6 +60,43 @@ class ClienteController extends Controller
 
     public function transferencia(Request $request)
     {
+        $id   = Auth::user()->id;
+        $user = UserModel::find($id);
+
+        $valorTransf  = $request->input('valor');
+        $numDest      = $request->input('numDest');
+        $nomeDest     = $request->input('nomeDest');
+        $valorNaConta = $user->saldo;
+
+        $userDest = DB::table('users')->where('num_conta', $numDest)->first();
+
+        if($userDest != NULL or $userDest != '') {
+
+            if($valorTransf <= $valorNaConta) {
+
+                $valorNaConta -= $valorTransf;
+                $user->saldo  = $valorNaConta;
+
+                if($user->save()) {
+
+                    $valorTransf2 = $userDest->saldo;
+                    $total = (float)$valorTransf2 + (float)$valorTransf;
+
+                    if( DB::table('users')->where('num_conta', $numDest)->update(['saldo' => $total]) ) {
+
+                        return view('dashboard');
+                    }
+                }
+
+            } else {
+
+                throw new Exception('Saldo insuficiente');
+            }
+
+        } else {
+
+            throw new Exception('Cliente não encontrado na base de dados');
+        }
 
     }
 }

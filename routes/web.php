@@ -50,4 +50,16 @@ Route::middleware([
 
     Route::post('/saq', [ClienteController::class, 'saque'])->name('saque-valor');
 
+    //TRANSFERENCIA
+    Route::get('redirect4', function () {
+        return redirect()->route('transferir');
+    });
+
+    Route::get('/transferencia', function(){
+        return view('transferencia');
+    })->name('transferir');
+
+    Route::post('/tra', [ClienteController::class, 'transferencia'])->name('transferir-valor');
+
+
 });
